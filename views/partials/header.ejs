@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src="/images/logo_small.png" width="75%" height="120%" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">The Clinic<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/clinic">Clinic Info</a></li>
+            <li><a href="/about">Natalie's Profile</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/info">Hours/Location</a></li>
+            <li><a href="/patientinfo">Patient Protocols</a></li>
+            <li><a href="/policies">Policies</a></li>
+            <li><a href="/whatsnew">What's New</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/recipes">Recipes</a></li>
+            <li><a href="/seminars">Seminars</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/treatment" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Special Treatments<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/treatment">Treatments</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/treatment/emdr">EMDR</a></li>
+            <li><a href="/treatment/nlp">NLP</a></li>
+          </ul>
+        </li>
+        <% if (!currentUser) { %>
+          <li><a href="/login">Admin Login</a></li>
+        <% } else { %>
+          <li><a href="/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+    <% } %>
+</div>

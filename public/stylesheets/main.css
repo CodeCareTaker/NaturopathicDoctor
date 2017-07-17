@@ -1,0 +1,64 @@
+body {
+	background: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Hypericum_perforatum_oil_extraction_HC1.JPG) no-repeat center center fixed;
+	background-size: cover;
+}
+#siteBody{
+	display: inline-block;
+}
+.centerImage {
+	width: 15%;
+	height: 10%;
+}
+.delete-form{
+    display: inline;
+}
+.formContainer {
+	width: 30%; 
+	margin: 30px auto;
+}
+.jumbotron{
+	vertical-align: top; 
+	text-align: center;
+	display: inline-block;
+	justify-content: center;
+	font-family: 'Playfair Display', serif;
+	background: #31502c;
+	color: white;
+}
+.mainSection{
+	/*Creates spacing around the div to position it in the center
+	of the page*/
+	text-align: center;
+	align-items: center;
+	display: inline-block;
+	justify-content: center;
+	font-family: 'Playfair Display', serif;
+	border: 25px solid #31502c;
+	background-color: white;
+	padding: 20px;
+	margin: 10%;
+	font-size: 120%;
+}
+.navbar-inverse{
+	background: #31502c;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a, .navbar-inverse .navbar-nav .open .dropdown-menu {
+    background: #31502c;
+    color:#ffffff;
+}
+.newText {
+	text-align: center;
+	color: white;
+}
+.topImage{
+	width: 30%;
+	height: 30%;
+}
+.bodyImage {
+	width: 75%; 
+	height: 75%;
+}
+.welcome {
+	width: 50%; 
+	height: 50%;
+}
