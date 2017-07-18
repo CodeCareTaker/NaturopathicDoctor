@@ -28,7 +28,7 @@ app.use(flash());
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret:"What is going on?",
+    secret:"What is happening?",
     resave: false,
     saveUninitialized: false
 }));
