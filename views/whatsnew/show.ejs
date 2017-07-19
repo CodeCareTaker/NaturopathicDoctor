@@ -1,4 +1,4 @@
-<% include ../partials/header %>
+<% include ../partials/formHeader %>
 
 <div class="container">
     <div class="row">
@@ -6,19 +6,21 @@
         <div class="formContainer">
             <form action="/whatsnew/<%= newsItem._id %>?_method=PUT" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="newsItem[title]" value="<%= newsItem.title %>">
+                    <p class="newText">Title: </p><input class="form-control" type="text" name="newsItem[title]" value="<%= newsItem.title %>">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="newsItem[content]" value="<%= newsItem.content %>">
+                    <p class="newText">Story: </p><textarea class="form-control" rows="4" cols="50" name="newsItem[content]"><%= newsItem.content %></textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-primary btn-block">Submit</button>
                 </div>
             </form>
-            <form class="text-right delete-form" action="/whatsnew/<%= newsItem._id %>?_method=DELETE" method="POST">
-                <a class="btn btn-danger" >Remove</a>
-            </form>
-            <a href="/whatsnew" class="newText">Go Back</a>
+            <div>
+                <a href="/whatsnew" class="btn btn-xs btn-default">Go Back</a>
+                <form class="text-right delete-news-form" action="/whatsnew/<%= newsItem._id %>?_method=DELETE" method="POST">
+                    <input type="submit" class="btn btn-xs btn-danger" value="Remove">
+                </form>
+            </div>
         </div>
     </div>
 </div>

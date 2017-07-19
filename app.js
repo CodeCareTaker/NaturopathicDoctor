@@ -160,7 +160,7 @@ app.delete("/whatsnew/:id", isAdmin, function(req, res) {
             req.flash("error", "Deletion Unsuccessful");
             res.redirect("/whatsnew");
         } else {
-            req.flash("error", "News item has bee deleted");
+            req.flash("error", "News item has been deleted");
             res.redirect("/whatsnew");
         }
     });
@@ -218,7 +218,7 @@ app.post("/recipes", function(req, res){
 });
 
 //SHOW ROUTE - SAME AS EDIT
-app.get("/recipes/:id/", isAdmin, isAdmin, function(req, res){
+app.get("/recipes/:id/", isAdmin, function(req, res){
     Recipe.findById(req.params.id, function(err, foundRecipe) {
         if(err){
             res.render("/recipes");
@@ -229,7 +229,7 @@ app.get("/recipes/:id/", isAdmin, isAdmin, function(req, res){
 });
 
 //EDIT ROUTE
-app.get("/recipes/:id/edit", isAdmin, isAdmin, function(req, res){
+app.get("/recipes/:id/edit", isAdmin, function(req, res){
     Recipe.findById(req.params.id, function(err, editRecipe) {
         if(err){
             res.render("/recipes");
@@ -255,7 +255,7 @@ app.put("/recipes/:id", isAdmin, function(req, res){
 //Delete Route
 app.delete("/recipes/:id", isAdmin, function(req, res) {
     //remove news entry from the website
-    NewsItem.findByIdAndRemove(req.params.id, function(err) {
+    Recipe.findByIdAndRemove(req.params.id, function(err) {
         if(err) {
             req.flash("error", "Deletion Unsuccessful");
             res.redirect("/recipes");

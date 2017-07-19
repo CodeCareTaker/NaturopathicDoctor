@@ -1,6 +1,5 @@
 body {
-	background: url(/images/Hypericum_perforatum_oil_extraction_HC1.JPG) no-repeat center center fixed;
-	background-size: cover;
+	background-color: white;
 }
 #siteBody{
 	display: inline-block;
@@ -11,7 +10,11 @@ body {
 }
 .delete-form{
     display: inline;
-    margin-left: 70%;
+    margin-left: 68%;
+}
+.delete-news-form{
+    display: inline;
+    margin-left: 65%;
 }
 .formContainer {
 	width: 30%; 
@@ -49,7 +52,7 @@ body {
 }
 .newText {
 	text-align: center;
-	color: white;
+	color: black;
 }
 .topImage{
 	width: 30%;

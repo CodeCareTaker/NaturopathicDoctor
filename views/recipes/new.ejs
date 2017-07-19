@@ -1,4 +1,4 @@
-<% include ../partials/header %>
+<% include ../partials/formHeader %>
 
 <div class="container">
     <div class="row">
@@ -6,19 +6,19 @@
         <div class="formContainer">
             <form action="/recipes" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="name" placeholder="name">
+                    <p class="newText">Name: </p><input class="form-control" type="text" name="name" placeholder="name">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="ingredients" placeholder="ingredients">
+                    <p class="newText">Ingredients: </p><textarea class="form-control" rows="4" cols="50" name="ingredients"></textarea>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="instructions" placeholder="Instructions">
+                    <p class="newText">Instructions: </p><textarea class="form-control" rows="4" cols="50" name="instructions"></textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-primary btn-block">Submit!</button>
                 </div>
             </form>
-            <a href="/recipes">Go Back</a>
+            <a href="/recipes" class="btn btn-xs btn-default">Go Back</a>
         </div>
     </div>
 </div>

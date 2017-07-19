@@ -1,4 +1,4 @@
-<% include ../partials/header %>
+<% include ../partials/formHeader %>
 
 <div class="container">
     <div class="row">
@@ -6,22 +6,24 @@
         <div class="formContainer">
             <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="recipe[name]" value="<%= recipe.name %>">
+                    <p class="newText">Name: </p><input class="form-control" type="text" name="recipe[name]" value="<%= recipe.name %>">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="recipe[ingredients]" value="<%= recipe.ingredients %>">
+                    <p class="newText">Ingredients: </p><textarea class="form-control" rows="4" cols="50" name="recipe[ingredients]"><%= recipe.ingredients %></textarea>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="recipe[instructions]" value="<%= recipe.instructions %>">
+                    <p class="newText">Instructions: </p><textarea class="form-control" rows="4" cols="50" name="recipe[instructions]"><%= recipe.instructions %></textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-primary btn-block">Submit</button>
                 </div>
             </form>
-            <a href="/recipes" class="newText">Go Back</a>
-            <form id="delete-form" action="/recipes/<%= recipes._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-xs btn-danger">Delete</button>
-            </form>
+            <div>
+                <a href="/recipes" class="newText btn btn-xs btn-default">Go Back</a>
+                <form id="delete-form" action="/recipes/<%= recipes._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-xs btn-danger">Delete</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
